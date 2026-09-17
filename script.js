@@ -16,17 +16,22 @@ function addToCart(itemName, price) {
     });
 
     if (existingItem) {
+
         existingItem.quantity++;
+
     } else {
+
         cart.push({
             name: itemName,
             price: price,
             quantity: 1
         });
+
     }
 
+    // Cart update hoga
+    // Cart automatically OPEN nahi hoga
     renderCart();
-    openCart();
 }
 
 
@@ -45,6 +50,7 @@ function renderCart() {
     let total = 0;
     let itemCount = 0;
 
+
     if (cart.length === 0) {
 
         cartItems.innerHTML =
@@ -52,19 +58,25 @@ function renderCart() {
 
     }
 
+
     cart.forEach(function(item, index) {
 
-        const itemTotal = item.price * item.quantity;
+        const itemTotal =
+            item.price * item.quantity;
 
         total += itemTotal;
         itemCount += item.quantity;
 
-        const cartItem = document.createElement("div");
+
+        const cartItem =
+            document.createElement("div");
 
         cartItem.className = "cart-item";
 
+
         cartItem.innerHTML = `
             <div>
+
                 <h3>${item.name}</h3>
 
                 <p>₹${item.price} × ${item.quantity}</p>
@@ -82,17 +94,21 @@ function renderCart() {
                     </button>
 
                 </div>
+
             </div>
 
             <strong>₹${itemTotal}</strong>
         `;
 
+
         cartItems.appendChild(cartItem);
 
     });
 
+
     cartCount.textContent = itemCount;
     cartTotal.textContent = total;
+
 }
 
 
@@ -104,11 +120,16 @@ function changeQuantity(index, amount) {
 
     cart[index].quantity += amount;
 
+
     if (cart[index].quantity <= 0) {
+
         cart.splice(index, 1);
+
     }
 
+
     renderCart();
+
 }
 
 
@@ -122,6 +143,7 @@ function openCart() {
         document.getElementById("cartPanel");
 
     cartPanel.classList.add("open");
+
 }
 
 
@@ -135,6 +157,7 @@ function closeCart() {
         document.getElementById("cartPanel");
 
     cartPanel.classList.remove("open");
+
 }
 
 
@@ -157,32 +180,32 @@ function placeOrder() {
     if (customerName === "") {
 
         alert("Please enter your name.");
-
         return;
+
     }
 
 
     if (tableNumber === "") {
 
         alert("Please enter your table number.");
-
         return;
+
     }
 
 
     if (phoneNumber === "") {
 
         alert("Please enter your phone number.");
-
         return;
+
     }
 
 
     if (cart.length === 0) {
 
         alert("Your cart is empty!");
-
         return;
+
     }
 
 
@@ -191,13 +214,22 @@ function placeOrder() {
 
 
     orderMessage +=
-        "Customer: " + customerName + "\n";
+        "Customer: " +
+        customerName +
+        "\n";
+
 
     orderMessage +=
-        "Table: " + tableNumber + "\n";
+        "Table: " +
+        tableNumber +
+        "\n";
+
 
     orderMessage +=
-        "Phone: " + phoneNumber + "\n\n";
+        "Phone: " +
+        phoneNumber +
+        "\n\n";
+
 
     orderMessage +=
         "ORDER ITEMS:\n";
@@ -213,6 +245,7 @@ function placeOrder() {
 
         total += itemTotal;
 
+
         orderMessage +=
             item.name +
             " x " +
@@ -225,10 +258,12 @@ function placeOrder() {
 
 
     orderMessage +=
-        "\nTOTAL: ₹" + total;
+        "\nTOTAL: ₹" +
+        total;
 
 
-    // Demo WhatsApp number
+    // WhatsApp number
+    // Baad mein restaurant owner ka number yahan daalna
 
     const whatsappNumber =
         "919876543210";
@@ -321,45 +356,50 @@ const searchInput =
 
 if (searchInput) {
 
-    searchInput.addEventListener("input", function() {
+    searchInput.addEventListener(
+        "input",
+        function() {
 
-        const searchText =
-            searchInput.value.toLowerCase().trim();
-
-
-        const cards =
-            document.querySelectorAll(".food-card");
-
-
-        cards.forEach(function(card) {
-
-            const foodName =
-                card.querySelector("h3")
-                .textContent
-                .toLowerCase();
+            const searchText =
+                searchInput.value
+                .toLowerCase()
+                .trim();
 
 
-            const foodDescription =
-                card.querySelector("p")
-                .textContent
-                .toLowerCase();
+            const cards =
+                document.querySelectorAll(".food-card");
 
 
-            if (
-                foodName.includes(searchText) ||
-                foodDescription.includes(searchText)
-            ) {
+            cards.forEach(function(card) {
 
-                card.style.display = "flex";
+                const foodName =
+                    card.querySelector("h3")
+                    .textContent
+                    .toLowerCase();
 
-            } else {
 
-                card.style.display = "none";
+                const foodDescription =
+                    card.querySelector("p")
+                    .textContent
+                    .toLowerCase();
 
-            }
 
-        });
+                if (
+                    foodName.includes(searchText) ||
+                    foodDescription.includes(searchText)
+                ) {
 
-    });
+                    card.style.display = "flex";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        }
+    );
 
 }
