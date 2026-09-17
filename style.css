@@ -8,10 +8,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #fff8f0;
-    color: #333;
+    background: #fffaf3;
+    color: #3d2925;
 }
 
 
@@ -20,19 +24,22 @@ body {
 ========================= */
 
 header {
-    background: linear-gradient(135deg, #ff6b00, #ffb347);
+    background: linear-gradient(135deg, #7b1e2b, #a83246, #d69b2d);
     color: white;
     text-align: center;
-    padding: 35px 20px;
+    padding: 45px 20px;
+    box-shadow: 0 4px 18px rgba(80, 30, 20, 0.18);
 }
 
 header h1 {
-    font-size: 34px;
-    margin-bottom: 8px;
+    font-size: 38px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 header p {
     font-size: 16px;
+    opacity: 0.95;
 }
 
 
@@ -41,9 +48,9 @@ header p {
 ========================= */
 
 main {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
-    padding: 25px 20px;
+    padding: 30px 20px;
 }
 
 
@@ -52,22 +59,23 @@ main {
 ========================= */
 
 .welcome {
-    background: white;
+    background: linear-gradient(135deg, #ffffff, #fff8ed);
     text-align: center;
-    padding: 30px 20px;
-    margin-bottom: 30px;
-    border-radius: 18px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 35px 20px;
+    margin-bottom: 32px;
+    border-radius: 20px;
+    border: 1px solid #f0dfc0;
+    box-shadow: 0 8px 25px rgba(100, 50, 20, 0.08);
 }
 
 .welcome h2 {
-    color: #ff6b00;
+    color: #8b2635;
     margin-bottom: 10px;
+    font-size: 28px;
 }
 
 .welcome p {
-    color: #777;
+    color: #806b63;
 }
 
 
@@ -76,8 +84,92 @@ main {
 ========================= */
 
 .menu h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 29px;
+    margin-bottom: 22px;
+    color: #5b1d27;
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+    margin-bottom: 22px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 18px;
+
+    border: 2px solid #eadbc5;
+    border-radius: 14px;
+
+    font-size: 16px;
+    outline: none;
+
+    background: white;
+    color: #3d2925;
+
+    box-shadow: 0 4px 15px rgba(80, 40, 20, 0.05);
+}
+
+.search-box input::placeholder {
+    color: #a99a91;
+}
+
+.search-box input:focus {
+    border-color: #c9952e;
+    box-shadow: 0 0 0 3px rgba(201, 149, 46, 0.12);
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+    display: flex;
+    gap: 10px;
+
+    overflow-x: auto;
+
+    margin-bottom: 28px;
+    padding: 5px 2px 10px;
+
+    scrollbar-width: thin;
+}
+
+.category-btn {
+    background: white;
+
+    color: #6b5148;
+
+    border: 1px solid #e3d1b6;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    transition: 0.25s;
+}
+
+.category-btn:hover {
+    background: #8b2635;
+    color: white;
+    border-color: #8b2635;
+    transform: translateY(-1px);
+}
+
+.category-btn.active {
+    background: #8b2635;
+    color: white;
+    border-color: #8b2635;
+    box-shadow: 0 5px 12px rgba(139, 38, 53, 0.2);
 }
 
 
@@ -90,28 +182,30 @@ main {
 
     background: white;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     overflow: hidden;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0dfc8;
 
-    transition: 0.3s;
+    box-shadow: 0 7px 22px rgba(80, 40, 20, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
-
-
-/* Hover Effect */
 
 .food-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 13px 30px rgba(80, 40, 20, 0.13);
 }
 
 
-/* Food Image */
+/* =========================
+   FOOD IMAGE
+========================= */
 
 .food-card img {
     width: 240px;
@@ -121,35 +215,40 @@ main {
 }
 
 
-/* Food Information */
+/* =========================
+   FOOD INFORMATION
+========================= */
 
 .food-info {
-    padding: 22px;
-
+    padding: 23px;
     flex: 1;
 }
 
 .food-info h3 {
     font-size: 22px;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
+
+    color: #4b2925;
 }
 
 .food-info p {
-    color: #777;
+    color: #806f68;
 
-    line-height: 1.5;
+    line-height: 1.55;
 
     margin-bottom: 15px;
 }
 
 
-/* Price */
+/* =========================
+   PRICE
+========================= */
 
 .food-info strong {
     display: block;
 
-    color: #e85d04;
+    color: #b47a16;
 
     font-size: 21px;
 
@@ -158,11 +257,11 @@ main {
 
 
 /* =========================
-   BUTTON
+   GENERAL BUTTON
 ========================= */
 
 button {
-    background: #ff6b00;
+    background: #8b2635;
 
     color: white;
 
@@ -170,154 +269,22 @@ button {
 
     padding: 12px 20px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     font-size: 15px;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 button:hover {
-    background: #e85d04;
+    background: #6f1d2a;
 
-    transform: scale(1.03);
+    transform: translateY(-1px);
 }
 
 
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #222;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 25px;
-
-    margin-top: 30px;
-}
-
-
-/* =========================
-   MOBILE DESIGN
-========================= */
-
-@media (max-width: 600px) {
-
-    header {
-        padding: 28px 15px;
-    }
-
-    header h1 {
-        font-size: 27px;
-    }
-
-    main {
-        padding: 20px 15px;
-    }
-
-
-    /* Food card mobile */
-
-    .food-card {
-        display: block;
-    }
-
-
-    /* Image full width */
-
-    .food-card img {
-        width: 100%;
-        height: 220px;
-    }
-
-
-    .food-info {
-        padding: 18px;
-    }
-
-
-    .food-info h3 {
-        font-size: 20px;
-    }
-
-}
-
-/* =========================
-   SEARCH BOX
-========================= */
-
-.search-box {
-    margin-bottom: 20px;
-}
-
-.search-box input {
-    width: 100%;
-
-    padding: 15px 18px;
-
-    border: 2px solid #eee;
-
-    border-radius: 12px;
-
-    font-size: 16px;
-
-    outline: none;
-}
-
-.search-box input:focus {
-    border-color: #ff6b00;
-}
-
-
-/* =========================
-   CATEGORIES
-========================= */
-
-.categories {
-    display: flex;
-
-    gap: 10px;
-
-    overflow-x: auto;
-
-    margin-bottom: 25px;
-
-    padding-bottom: 5px;
-}
-
-.category-btn {
-    background: white;
-
-    color: #555;
-
-    border: 1px solid #ddd;
-
-    padding: 10px 18px;
-
-    border-radius: 25px;
-
-    white-space: nowrap;
-}
-
-.category-btn:hover {
-    background: #ff6b00;
-
-    color: white;
-}
-
-.category-btn.active {
-    background: #ff6b00;
-
-    color: white;
-
-    border-color: #ff6b00;
-}
 /* =========================
    CART FLOATING BUTTON
 ========================= */
@@ -328,28 +295,36 @@ footer {
     right: 25px;
     bottom: 25px;
 
-    width: 60px;
-    height: 60px;
+    width: 62px;
+    height: 62px;
 
     border-radius: 50%;
 
-    background: #ff6b00;
+    background: linear-gradient(135deg, #8b2635, #b53a4c);
 
     color: white;
 
-    border: none;
+    border: 3px solid #f1d28b;
 
     font-size: 25px;
 
     cursor: pointer;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 7px 22px rgba(90, 25, 35, 0.28);
 
     z-index: 1000;
+
+    transition: 0.25s;
+}
+
+.cart-floating-button:hover {
+    transform: scale(1.08);
 }
 
 
-/* Number of items */
+/* =========================
+   CART COUNT
+========================= */
 
 #cartCount {
     position: absolute;
@@ -357,7 +332,7 @@ footer {
     top: -5px;
     right: -5px;
 
-    background: #222;
+    background: #d69b2d;
 
     color: white;
 
@@ -372,6 +347,8 @@ footer {
     justify-content: center;
 
     font-size: 12px;
+
+    font-weight: bold;
 }
 
 
@@ -388,21 +365,21 @@ footer {
     width: 400px;
     height: 100vh;
 
-    background: white;
+    background: #fffdf9;
 
     z-index: 2000;
 
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    box-shadow: -8px 0 30px rgba(60, 25, 20, 0.2);
 
     display: flex;
 
     flex-direction: column;
 
-    transition: 0.4s;
+    transition: right 0.4s ease;
 }
 
 
-/* Open cart */
+/* OPEN CART */
 
 .cart-panel.open {
     right: 0;
@@ -422,17 +399,21 @@ footer {
 
     padding: 20px;
 
-    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, #7b1e2b, #a83246);
+
+    color: white;
+
+    border-bottom: 3px solid #d69b2d;
 }
 
 .cart-header h2 {
-    color: #333;
+    color: white;
 }
 
 .close-cart {
-    background: #f5f5f5;
+    background: rgba(255,255,255,0.15);
 
-    color: #333;
+    color: white;
 
     width: 35px;
     height: 35px;
@@ -442,6 +423,10 @@ footer {
     border-radius: 50%;
 
     font-size: 18px;
+}
+
+.close-cart:hover {
+    background: rgba(255,255,255,0.28);
 }
 
 
@@ -460,110 +445,41 @@ footer {
 .empty-cart {
     text-align: center;
 
-    color: #888;
+    color: #9b8a82;
 
     margin-top: 50px;
 }
 
 
 /* =========================
-   CART BOTTOM
-========================= */
-
-.cart-bottom {
-    padding: 20px;
-
-    border-top: 1px solid #eee;
-
-    background: #fff;
-}
-
-.total-row {
-    display: flex;
-
-    justify-content: space-between;
-
-    font-size: 20px;
-
-    margin-bottom: 15px;
-}
-
-.total-row strong {
-    color: #ff6b00;
-}
-
-
-/* =========================
-   ORDER BUTTON
-========================= */
-
-.order-button {
-    width: 100%;
-
-    padding: 15px;
-
-    background: #ff6b00;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 10px;
-
-    font-size: 17px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-.order-button:hover {
-    background: #e85d04;
-}
-
-
-/* =========================
-   MOBILE CART
-========================= */
-
-@media (max-width: 600px) {
-
-    .cart-panel {
-        width: 100%;
-
-        right: -100%;
-    }
-
-    .cart-floating-button {
-        right: 18px;
-
-        bottom: 18px;
-    }
-
-}
-/* =========================
-   CART ITEMS
+   CART ITEM
 ========================= */
 
 .cart-item {
     display: grid;
+
     grid-template-columns: 1fr auto;
+
     gap: 10px;
 
-    padding: 15px 0;
+    padding: 16px 0;
 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee1d1;
 }
 
 .cart-item h3 {
     margin: 0 0 5px;
+
     font-size: 16px;
-    color: #333;
+
+    color: #4b2925;
 }
 
 .cart-item p {
     margin: 0;
-    color: #888;
+
+    color: #8c7971;
+
     font-size: 14px;
 }
 
@@ -576,9 +492,10 @@ footer {
     display: flex;
 
     align-items: center;
+
     gap: 8px;
 
-    margin-top: 8px;
+    margin-top: 9px;
 }
 
 .quantity-controls button {
@@ -589,7 +506,7 @@ footer {
 
     border-radius: 6px;
 
-    background: #ff6b00;
+    background: #8b2635;
 
     color: white;
 
@@ -601,7 +518,7 @@ footer {
 }
 
 .quantity-controls button:hover {
-    background: #e85d04;
+    background: #6f1d2a;
 }
 
 .quantity-controls span {
@@ -618,7 +535,7 @@ footer {
 ========================= */
 
 .cart-item > strong {
-    color: #ff6b00;
+    color: #b47a16;
 
     font-size: 16px;
 
@@ -627,30 +544,15 @@ footer {
 
 
 /* =========================
-   MOBILE CART
-========================= */
-
-@media (max-width: 600px) {
-
-    .cart-item {
-        grid-template-columns: 1fr;
-    }
-
-    .cart-item > strong {
-        align-self: start;
-    }
-
-}
-/* =========================
    CUSTOMER DETAILS
 ========================= */
 
 .customer-details {
-    padding: 15px 20px;
+    padding: 16px 20px;
 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee1d1;
 
-    background: #fff;
+    background: #fff8ed;
 }
 
 .customer-details h3 {
@@ -658,7 +560,7 @@ footer {
 
     font-size: 18px;
 
-    color: #333;
+    color: #5b1d27;
 }
 
 .customer-details input {
@@ -670,15 +572,178 @@ footer {
 
     margin-bottom: 10px;
 
-    border: 1px solid #ddd;
+    border: 1px solid #dfccb0;
 
     border-radius: 8px;
 
     font-size: 14px;
 
     outline: none;
+
+    background: white;
 }
 
 .customer-details input:focus {
-    border-color: #ff6b00;
+    border-color: #c9952e;
+
+    box-shadow: 0 0 0 3px rgba(201, 149, 46, 0.1);
+}
+
+
+/* =========================
+   CART BOTTOM
+========================= */
+
+.cart-bottom {
+    padding: 20px;
+
+    border-top: 1px solid #eadbc8;
+
+    background: white;
+}
+
+.total-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+    color: #4b2925;
+}
+
+.total-row strong {
+    color: #b47a16;
+}
+
+
+/* =========================
+   ORDER BUTTON
+========================= */
+
+.order-button {
+    width: 100%;
+
+    padding: 15px;
+
+    background: linear-gradient(135deg, #8b2635, #a83246);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.order-button:hover {
+    background: linear-gradient(135deg, #6f1d2a, #8b2635);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #4b2925;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 28px;
+
+    margin-top: 35px;
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 32px 15px;
+    }
+
+    header h1 {
+        font-size: 29px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 22px 15px;
+    }
+
+    .welcome {
+        padding: 28px 18px;
+    }
+
+    .welcome h2 {
+        font-size: 24px;
+    }
+
+    .menu h2 {
+        font-size: 25px;
+    }
+
+
+    /* Food card */
+
+    .food-card {
+        display: block;
+    }
+
+    .food-card img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .food-info {
+        padding: 18px;
+    }
+
+    .food-info h3 {
+        font-size: 20px;
+    }
+
+
+    /* Cart */
+
+    .cart-panel {
+        width: 100%;
+        right: -100%;
+    }
+
+    .cart-floating-button {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .cart-item {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item > strong {
+        align-self: start;
+    }
+
 }
