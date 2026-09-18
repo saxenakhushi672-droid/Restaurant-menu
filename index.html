@@ -2,608 +2,599 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Spice Garden | Digital Menu</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Café Lumière</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- HEADER -->
 
-    <header>
-        <h1>🍽️ Spice Garden</h1>
-        <p>Fresh Food • Great Taste • Happy Moments</p>
+    <header class="cafe-header">
+
+        <div class="logo-mark">
+            LM
+        </div>
+
+        <div class="brand">
+
+            <h1>Café Lumière</h1>
+
+            <p>COFFEE • FOOD • MOMENTS</p>
+
+        </div>
+
+        <button
+            class="header-cart"
+            onclick="openCart()">
+
+            🛒
+            <span id="headerCartCount">0</span>
+
+        </button>
+
     </header>
 
 
-    <!-- ================= MAIN ================= -->
+    <!-- MAIN -->
 
     <main>
 
-        <!-- Welcome -->
 
-        <section class="welcome">
+<!-- PREMIUM OFFERS -->
+<section class="offers">
 
-            <h2>Welcome to Spice Garden 👋</h2>
+    <div class="offer-card">
+
+        <div class="offer-icon">☕</div>
+
+        <div class="offer-content">
+
+            <span class="offer-label">
+                LUMIÈRE WEEKDAY PRIVILEGE
+            </span>
+
+            <h3>
+                15% OFF
+            </h3>
 
             <p>
-                Explore our delicious menu and order your favourite food.
+                On orders above ₹799
             </p>
 
-        </section>
+            <small>
+                Monday – Thursday
+            </small>
+
+        </div>
+
+    </div>
 
 
-        <!-- ================= MENU ================= -->
+    <div class="offer-card">
+
+        <div class="offer-icon">✦</div>
+
+        <div class="offer-content">
+
+            <span class="offer-label">
+                COFFEE HOUR
+            </span>
+
+            <h3>
+                Buy 1 • Get 1 at 50% OFF
+            </h3>
+
+            <p>
+                On selected handcrafted coffees
+            </p>
+
+            <small>
+                4 PM – 7 PM
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="offer-card">
+
+        <div class="offer-icon">♡</div>
+
+        <div class="offer-content">
+
+            <span class="offer-label">
+                DESSERT & COFFEE
+            </span>
+
+            <h3>
+                ₹349 Experience
+            </h3>
+
+            <p>
+                Any dessert + any classic coffee
+            </p>
+
+            <small>
+                Available all day
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="offer-card">
+
+        <div class="offer-icon">◇</div>
+
+        <div class="offer-content">
+
+            <span class="offer-label">
+                LUMIÈRE COMBO
+            </span>
+
+            <h3>
+                ₹699
+            </h3>
+
+            <p>
+                Pizza + Pasta + 2 Beverages
+            </p>
+
+            <small>
+                Perfect for sharing
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- MENU -->
 
         <section class="menu">
 
-            <h2>Our Menu</h2>
+            <div class="menu-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        OUR MENU
+                    </span>
+
+                    <h2>
+                        Something for every craving
+                    </h2>
+
+                    <p>
+                        Freshly prepared favourites, crafted for every mood.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-            <!-- Search -->
+
+            <!-- SEARCH -->
 
             <div class="search-box">
+
+                <span>
+                    🔍
+                </span>
 
                 <input
                     type="text"
                     id="searchInput"
-                    placeholder="🔍 Search food..."
+                    placeholder="Search dishes..."
                 >
 
             </div>
 
 
-            <!-- Categories -->
+
+            <!-- CATEGORIES -->
 
             <div class="categories">
 
-                <button class="category-btn active" onclick="filterMenu('all')">
+                <button
+                    class="category-btn active"
+                    onclick="filterMenu('all', this)">
                     All
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('starter')">
-                    🥟 Starters
+                <button
+                    class="category-btn"
+                    onclick="filterMenu('starter', this)">
+                    Snacks
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('pizza')">
-                    🍕 Pizza
+                <button
+                    class="category-btn"
+                    onclick="filterMenu('pizza', this)">
+                    Pizza & Pasta
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('burger')">
-                    🍔 Burger
+                <button
+                    class="category-btn"
+                    onclick="filterMenu('burger', this)">
+                    Burgers & Sandwiches
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('indian')">
-                    🥘 Indian
+                <button
+                    class="category-btn"
+                    onclick="filterMenu('chinese', this)">
+                    Chinese
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('south-indian')">
-                    🥞 South Indian
+                <button
+                    class="category-btn"
+                    onclick="filterMenu('indian', this)">
+                    Indian
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('chinese')">
-                    🍜 Chinese
+                <button
+                    class="category-btn"
+                    onclick="filterMenu('drinks', this)">
+                    Beverages
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('drinks')">
-                    🥤 Drinks
+                <button
+                    class="category-btn"
+                    onclick="filterMenu('dessert', this)">
+                    Desserts
                 </button>
 
-                <button class="category-btn" onclick="filterMenu('dessert')">
-                    🍰 Desserts
-                </button>
-
             </div>
 
 
-            <!-- ================= FOOD ITEMS ================= -->
 
+            <!-- FOOD GRID -->
 
-            <!-- Samosa -->
-
-            <div class="food-card" data-category="starter">
-
-                <img
-                    src="https://images.unsplash.com/photo-1601050690597-df0568f70950"
-                    alt="Samosa"
-                >
-
-                <div class="food-info">
-
-                    <h3>Samosa</h3>
-
-                    <p>
-                        Crispy samosa filled with spicy potato masala.
-                    </p>
-
-                    <strong>₹80</strong>
-
-                    <button onclick="addToCart('Samosa', 80)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
+            <div
+                id="foodGrid"
+                class="food-grid">
             </div>
-
-
-            <!-- Paneer Tikka -->
-
-            <div class="food-card" data-category="starter">
-
-                <img
-                    src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8"
-                    alt="Paneer Tikka"
-                >
-
-                <div class="food-info">
-
-                    <h3>Paneer Tikka</h3>
-
-                    <p>
-                        Grilled paneer with colourful vegetables and spices.
-                    </p>
-
-                    <strong>₹249</strong>
-
-                    <button onclick="addToCart('Paneer Tikka', 249)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Margherita Pizza -->
-
-            <div class="food-card" data-category="pizza">
-
-                <img
-                    src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002"
-                    alt="Margherita Pizza"
-                >
-
-                <div class="food-info">
-
-                    <h3>Margherita Pizza</h3>
-
-                    <p>
-                        Fresh tomato, mozzarella cheese and basil.
-                    </p>
-
-                    <strong>₹299</strong>
-
-                    <button onclick="addToCart('Margherita Pizza', 299)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Farmhouse Pizza -->
-
-            <div class="food-card" data-category="pizza">
-
-                <img
-                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
-                    alt="Farmhouse Pizza"
-                >
-
-                <div class="food-info">
-
-                    <h3>Farmhouse Pizza</h3>
-
-                    <p>
-                        Loaded with fresh vegetables and mozzarella cheese.
-                    </p>
-
-                    <strong>₹399</strong>
-
-                    <button onclick="addToCart('Farmhouse Pizza', 399)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Classic Burger -->
-
-            <div class="food-card" data-category="burger">
-
-                <img
-                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
-                    alt="Classic Burger"
-                >
-
-                <div class="food-info">
-
-                    <h3>Classic Cheese Burger</h3>
-
-                    <p>
-                        Juicy patty with cheese, lettuce and fresh vegetables.
-                    </p>
-
-                    <strong>₹199</strong>
-
-                    <button onclick="addToCart('Classic Cheese Burger', 199)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Chicken Burger -->
-
-            <div class="food-card" data-category="burger">
-
-                <img
-                    src="https://images.unsplash.com/photo-1606755962773-d324e0a13086"
-                    alt="Chicken Burger"
-                >
-
-                <div class="food-info">
-
-                    <h3>Chicken Burger</h3>
-
-                    <p>
-                        Crispy chicken patty with fresh lettuce and sauce.
-                    </p>
-
-                    <strong>₹249</strong>
-
-                    <button onclick="addToCart('Chicken Burger', 249)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Butter Paneer -->
-
-            <div class="food-card" data-category="indian">
-
-                <img
-                    src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7"
-                    alt="Butter Paneer"
-                >
-
-                <div class="food-info">
-
-                    <h3>Butter Paneer</h3>
-
-                    <p>
-                        Creamy paneer cooked in rich tomato gravy.
-                    </p>
-
-                    <strong>₹299</strong>
-
-                    <button onclick="addToCart('Butter Paneer', 299)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Masala Dosa -->
-
-            <div class="food-card" data-category="south-indian">
-
-                <img
-                    src="https://images.unsplash.com/photo-1630383249896-424e482df921"
-                    alt="Masala Dosa"
-                >
-
-                <div class="food-info">
-
-                    <h3>Masala Dosa</h3>
-
-                    <p>
-                        Crispy dosa served with potato masala, sambar and chutney.
-                    </p>
-
-                    <strong>₹149</strong>
-
-                    <button onclick="addToCart('Masala Dosa', 149)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Idli -->
-
-            <div class="food-card" data-category="south-indian">
-
-                <img
-                    src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc"
-                    alt="Idli Sambar"
-                >
-
-                <div class="food-info">
-
-                    <h3>Idli Sambar</h3>
-
-                    <p>
-                        Soft steamed idlis served with hot sambar and chutney.
-                    </p>
-
-                    <strong>₹119</strong>
-
-                    <button onclick="addToCart('Idli Sambar', 119)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Hakka Noodles -->
-
-            <div class="food-card" data-category="chinese">
-
-                <img
-                    src="https://images.unsplash.com/photo-1585032226651-759b368d7246"
-                    alt="Hakka Noodles"
-                >
-
-                <div class="food-info">
-
-                    <h3>Hakka Noodles</h3>
-
-                    <p>
-                        Stir-fried noodles with fresh vegetables and sauces.
-                    </p>
-
-                    <strong>₹199</strong>
-
-                    <button onclick="addToCart('Hakka Noodles', 199)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Fried Rice -->
-
-            <div class="food-card" data-category="chinese">
-
-                <img
-                    src="https://images.unsplash.com/photo-1603133872878-684f208fb84b"
-                    alt="Fried Rice"
-                >
-
-                <div class="food-info">
-
-                    <h3>Veg Fried Rice</h3>
-
-                    <p>
-                        Delicious fried rice tossed with fresh vegetables.
-                    </p>
-
-                    <strong>₹179</strong>
-
-                    <button onclick="addToCart('Veg Fried Rice', 179)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Cold Coffee -->
-
-            <div class="food-card" data-category="drinks">
-
-                <img
-                    src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735"
-                    alt="Cold Coffee"
-                >
-
-                <div class="food-info">
-
-                    <h3>Cold Coffee</h3>
-
-                    <p>
-                        Chilled creamy coffee served with ice.
-                    </p>
-
-                    <strong>₹129</strong>
-
-                    <button onclick="addToCart('Cold Coffee', 129)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Lemon Soda -->
-
-            <div class="food-card" data-category="drinks">
-
-                <img
-                    src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd"
-                    alt="Fresh Lime Soda"
-                >
-
-                <div class="food-info">
-
-                    <h3>Fresh Lime Soda</h3>
-
-                    <p>
-                        Refreshing lime drink with a fizzy twist.
-                    </p>
-
-                    <strong>₹99</strong>
-
-                    <button onclick="addToCart('Fresh Lime Soda', 99)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Gulab Jamun -->
-
-            <div class="food-card" data-category="dessert">
-
-                <img
-                    src="https://images.unsplash.com/photo-1666190094760-4f6f1b0a7d3f"
-                    alt="Gulab Jamun"
-                >
-
-                <div class="food-info">
-
-                    <h3>Gulab Jamun</h3>
-
-                    <p>
-                        Soft and warm gulab jamun served with sweet syrup.
-                    </p>
-
-                    <strong>₹99</strong>
-
-                    <button onclick="addToCart('Gulab Jamun', 99)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Brownie -->
-
-            <div class="food-card" data-category="dessert">
-
-                <img
-                    src="https://images.unsplash.com/photo-1606313564200-e75d5e30476b"
-                    alt="Chocolate Brownie"
-                >
-
-                <div class="food-info">
-
-                    <h3>Chocolate Brownie</h3>
-
-                    <p>
-                        Rich chocolate brownie with a soft and fudgy centre.
-                    </p>
-
-                    <strong>₹149</strong>
-
-                    <button onclick="addToCart('Chocolate Brownie', 149)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
 
         </section>
 
     </main>
-     <!-- ================= CART ================= -->
 
-<div id="cartPanel" class="cart-panel">
 
-    <div class="cart-header">
 
-        <h2>🛒 Your Cart</h2>
+    <!-- DISH DETAILS MODAL -->
 
-        <button class="close-cart" onclick="closeCart()">
-            ✕
-        </button>
+    <div
+        id="dishModal"
+        class="dish-modal">
+
+        <div class="dish-modal-content">
+
+            <button
+                class="close-dish-modal"
+                onclick="closeDishDetails()">
+                ✕
+            </button>
+
+
+            <img
+                id="detailImage"
+                class="detail-image"
+                src=""
+                alt="Dish"
+            >
+
+
+            <div class="dish-detail-info">
+
+                <span
+                    id="detailCategory"
+                    class="detail-category">
+                </span>
+
+                <h2 id="detailName"></h2>
+
+                <div
+                    id="detailPrice"
+                    class="detail-price">
+                </div>
+
+                <p
+                    id="detailDescription"
+                    class="detail-description">
+                </p>
+
+
+
+                <!-- NUTRITION -->
+
+                <div class="detail-section">
+
+                    <h3>
+                        Nutrition
+                    </h3>
+
+                    <div class="nutrition-grid">
+
+                        <div>
+
+                            <strong
+                                id="detailCalories">
+                            </strong>
+
+                            <span>
+                                Calories
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong
+                                id="detailProtein">
+                            </strong>
+
+                            <span>
+                                Protein
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong
+                                id="detailCarbs">
+                            </strong>
+
+                            <span>
+                                Carbs
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong
+                                id="detailFat">
+                            </strong>
+
+                            <span>
+                                Fat
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INGREDIENTS -->
+
+                <div class="detail-section">
+
+                    <h3>
+                        Ingredients
+                    </h3>
+
+                    <p id="detailIngredients"></p>
+
+                </div>
+
+
+
+                <!-- PREPARATION -->
+
+                <div class="detail-section">
+
+                    <h3>
+                        How It's Made
+                    </h3>
+
+                    <p id="detailPreparation"></p>
+
+                </div>
+
+
+
+                <!-- ALLERGENS -->
+
+                <div class="detail-section">
+
+                    <h3>
+                        Allergens
+                    </h3>
+
+                    <p id="detailAllergens"></p>
+
+                </div>
+
+
+
+                <button
+                    id="detailAddButton"
+                    class="detail-add-button">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
 
-    <div id="cartItems" class="cart-items">
 
-        <p class="empty-cart">
-            Your cart is empty.
-        </p>
+    <!-- CART OVERLAY -->
 
+    <div
+        id="cartOverlay"
+        class="cart-overlay"
+        onclick="closeCart()">
     </div>
-    <!-- CUSTOMER DETAILS -->
 
-<div class="customer-details">
 
-    <h3>Customer Details</h3>
 
-    <input type="text" id="customerName" placeholder="Your Name">
+    <!-- CART PANEL -->
 
-    <input type="text" id="tableNumber" placeholder="Table Number">
+    <aside
+        id="cartPanel"
+        class="cart-panel">
 
-    <input type="tel" id="phoneNumber" placeholder="Phone Number">
+        <div class="cart-header">
 
-</div>
+            <div>
 
-    <div class="cart-bottom">
+                <span class="section-label">
+                    YOUR ORDER
+                </span>
 
-        <div class="total-row">
+                <h2>
+                    Your Cart
+                </h2>
 
-            <span>Total</span>
+            </div>
 
-            <strong>
-                ₹<span id="cartTotal">0</span>
-            </strong>
+            <button
+                class="close-cart"
+                onclick="closeCart()">
+                ✕
+            </button>
 
         </div>
 
 
-        <button class="order-button" onclick="placeOrder()">
-            Place Order
-        </button>
 
-    </div>
+        <div
+            id="cartItems"
+            class="cart-items">
 
-</div>
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
 
 
-<!-- Cart Button -->
 
-<button id="cartButton" class="cart-floating-button" onclick="openCart()">
+        <!-- CUSTOMER DETAILS -->
 
-    🛒
+        <div class="customer-details">
 
-    <span id="cartCount">0</span>
+            <h3>
+                Customer Details
+            </h3>
 
-</button>
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Name"
+            >
 
-    <!-- ================= FOOTER ================= -->
+            <input
+                type="text"
+                id="tableNumber"
+                placeholder="Table Number"
+            >
+
+            <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="Phone Number"
+            >
+
+        </div>
+
+
+
+        <!-- TOTAL -->
+
+        <div class="cart-bottom">
+
+            <div class="total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    ₹<span id="cartTotal">0</span>
+                </strong>
+
+            </div>
+
+
+            <button
+                class="order-button"
+                onclick="callAttendant()">
+                Call Attendant 
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- FLOATING CART -->
+
+    <button
+        id="cartButton"
+        class="cart-floating-button"
+        onclick="openCart()">
+
+        🛒
+
+        <span id="cartCount">
+            0
+        </span>
+
+    </button>
+
+
+
+    <!-- FOOTER -->
 
     <footer>
 
-        <p>© 2026 Spice Garden | Digital Menu</p>
+        <div class="footer-logo">
+            Café Lumière
+        </div>
+
+        <p>
+            COFFEE • FOOD • MOMENTS
+        </p>
+
+        <small>
+            © 2026 Café Lumière
+        </small>
 
     </footer>
 
 
-    <!-- JavaScript -->
+
+    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 

@@ -1,6 +1,13 @@
-/* =========================
-   BASIC SETTINGS
-========================= */
+/* ========================================
+   CAFÉ LUMIÈRE — PREMIUM CAFÉ THEME
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* ========================================
+   BASIC RESET
+======================================== */
 
 * {
     margin: 0;
@@ -8,93 +15,296 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background: #121212;
-    color: #f5f1e8;
+    font-family: "DM Sans", sans-serif;
+    background: #f6f1e9;
+    color: #2b211c;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font-family: inherit;
 }
 
 
-/* =========================
+/* ========================================
    HEADER
-========================= */
+======================================== */
 
-header {
-    background: linear-gradient(135deg, #090909, #241116, #4b1722);
-    color: #ffffff;
-    text-align: center;
-    padding: 45px 20px;
-    border-bottom: 1px solid #b8862c;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+.cafe-header {
+    min-height: 270px;
+    padding: 55px 7%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(196, 155, 93, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #241914,
+            #3a2820 55%,
+            #211713
+        );
+
+    color: #fffaf2;
+    position: relative;
+    overflow: hidden;
 }
 
-header h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    color: #f5c76a;
+.cafe-header::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(220, 183, 121, 0.2);
+    border-radius: 50%;
+
+    right: -100px;
+    top: -100px;
 }
 
-header p {
-    font-size: 16px;
-    color: #ddd4c5;
+.logo-mark {
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9a66b;
+    color: #d8b77c;
+
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+
+    transform: rotate(45deg);
+}
+
+.brand {
+    position: relative;
+    z-index: 2;
+}
+
+.brand h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.brand p {
+    margin-top: 12px;
+    color: #d7bd91;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 5px;
 }
 
 
-/* =========================
+/* ========================================
    MAIN
-========================= */
+======================================== */
 
 main {
-    max-width: 950px;
+    max-width: 1450px;
     margin: auto;
-    padding: 30px 20px;
+    padding: 0 5% 70px;
 }
 
 
-/* =========================
-   WELCOME BOX
-========================= */
+/* ========================================
+   PREMIUM OFFERS
+======================================== */
 
-.welcome {
-    background: linear-gradient(145deg, #1c1c1c, #171717);
-    text-align: center;
-    padding: 35px 20px;
-    margin-bottom: 32px;
-    border-radius: 20px;
-    border: 1px solid #3a3028;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+.offers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    margin-top: -42px;
+
+    position: relative;
+    z-index: 5;
 }
 
-.welcome h2 {
-    color: #f5c76a;
-    margin-bottom: 10px;
-    font-size: 28px;
+.offer-card {
+    position: relative;
+
+    min-height: 145px;
+    padding: 24px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #f5eee3
+        );
+
+    border: 1px solid rgba(121, 84, 53, 0.16);
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 28px rgba(62, 42, 28, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.welcome p {
-    color: #aaa39a;
+.offer-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    right: -38px;
+    bottom: -38px;
+
+    border-radius: 50%;
+
+    background: rgba(183, 134, 86, 0.08);
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 38px rgba(62, 42, 28, 0.13);
+
+    border-color:
+        rgba(183, 134, 86, 0.35);
+}
+
+.offer-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ead8c2;
+    color: #6b452d;
+
+    font-size: 21px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(107, 69, 45, 0.08);
+}
+
+.offer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.offer-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #a2764f;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.offer-content h3 {
+    margin: 0 0 5px;
+
+    color: #3f2a1f;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+.offer-content p {
+    margin: 0 0 5px;
+
+    color: #735f51;
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.offer-content small {
+    color: #9a806d;
+
+    font-size: 10px;
+    letter-spacing: 0.4px;
 }
 
 
-/* =========================
-   MENU
-========================= */
+/* ========================================
+   MENU SECTION
+======================================== */
 
-.menu h2 {
-    font-size: 29px;
-    margin-bottom: 22px;
-    color: #f5c76a;
+.menu {
+    padding-top: 75px;
+}
+
+.menu-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 28px;
+}
+
+.section-label {
+    color: #a07945;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.menu-heading h2 {
+    margin-top: 7px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 600;
+
+    color: #2a201b;
 }
 
 
-/* =========================
-   SEARCH BOX
-========================= */
+/* ========================================
+   SEARCH
+======================================== */
 
 .search-box {
     margin-bottom: 22px;
@@ -102,33 +312,39 @@ main {
 
 .search-box input {
     width: 100%;
-    padding: 15px 18px;
 
-    border: 1px solid #443b34;
-    border-radius: 14px;
+    padding: 17px 22px;
 
-    font-size: 16px;
+    border: 1px solid #dfd2c3;
+    border-radius: 12px;
+
+    background: #fffdf9;
+    color: #2b211c;
+
+    font-size: 14px;
+
     outline: none;
 
-    background: #1d1d1d;
-    color: white;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-}
-
-.search-box input::placeholder {
-    color: #8e8880;
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .search-box input:focus {
-    border-color: #c99a3e;
-    box-shadow: 0 0 0 3px rgba(201, 154, 62, 0.12);
+    border-color: #b18a55;
+
+    box-shadow:
+        0 0 0 4px rgba(177, 138, 85, 0.10);
+}
+
+.search-box input::placeholder {
+    color: #9d9187;
 }
 
 
-/* =========================
+/* ========================================
    CATEGORIES
-========================= */
+======================================== */
 
 .categories {
     display: flex;
@@ -136,304 +352,456 @@ main {
 
     overflow-x: auto;
 
-    margin-bottom: 28px;
-    padding: 5px 2px 10px;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
 
-    scrollbar-width: thin;
+    scrollbar-width: none;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
 }
 
 .category-btn {
-    background: #1d1d1d;
-
-    color: #d0c8bd;
-
-    border: 1px solid #403830;
+    flex-shrink: 0;
 
     padding: 10px 18px;
 
-    border-radius: 25px;
+    border: 1px solid #ded1c1;
+    border-radius: 30px;
 
-    white-space: nowrap;
+    background: transparent;
+    color: #675950;
 
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 600;
 
-    transition: 0.25s;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
 }
 
 .category-btn:hover {
-    background: #7d2638;
-    color: white;
-    border-color: #a6384d;
+    border-color: #9e7540;
+    color: #8b6332;
 }
 
 .category-btn.active {
-    background: #8b2635;
-    color: white;
-    border-color: #c14a61;
-    box-shadow: 0 5px 15px rgba(139, 38, 53, 0.35);
+    background: #2c211c;
+    border-color: #2c211c;
+    color: #fffaf2;
 }
 
 
-/* =========================
+/* ========================================
+   FOOD GRID
+======================================== */
+
+.food-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+
+/* ========================================
    FOOD CARD
-========================= */
+======================================== */
 
 .food-card {
-    display: flex;
-
-    background: #1b1b1b;
-
-    margin-bottom: 22px;
-
-    border-radius: 20px;
-
     overflow: hidden;
 
-    border: 1px solid #352d28;
+    background: #fffdf9;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    border: 1px solid #e7ddd0;
+    border-radius: 18px;
 
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+    box-shadow:
+        0 8px 25px rgba(55, 39, 29, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .food-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 
-    border-color: #72552a;
-
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 20px 38px rgba(55, 39, 29, 0.13);
 }
 
+.food-image {
+    height: 230px;
 
-/* =========================
-   FOOD IMAGE
-========================= */
+    overflow: hidden;
 
-.food-card img {
-    width: 240px;
-    height: 190px;
+    cursor: pointer;
+
+    position: relative;
+
+    background: #e9dfd2;
+}
+
+.food-image::after {
+    content: "VIEW DETAILS";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 14px;
+
+    transform: translate(-50%, 10px);
+
+    padding: 7px 12px;
+
+    background: rgba(36, 27, 22, 0.88);
+    color: #fff;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+
+    opacity: 0;
+
+    transition: all 0.25s ease;
+}
+
+.food-card:hover .food-image::after {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
 
     object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.05);
 }
 
 
-/* =========================
-   FOOD INFORMATION
-========================= */
+/* ========================================
+   FOOD INFO
+======================================== */
 
 .food-info {
-    padding: 23px;
-    flex: 1;
+    padding: 19px;
 }
 
 .food-info h3 {
-    font-size: 22px;
+    font-family: "Playfair Display", serif;
 
-    margin-bottom: 9px;
+    font-size: 20px;
+    line-height: 1.25;
 
-    color: #ffffff;
+    color: #2b211c;
+
+    cursor: pointer;
+
+    margin-bottom: 10px;
 }
-
-.food-info p {
-    color: #a7a09a;
-
-    line-height: 1.55;
-
-    margin-bottom: 15px;
-}
-
-
-/* =========================
-   PRICE
-========================= */
 
 .food-info strong {
     display: block;
 
-    color: #f5c76a;
+    margin-bottom: 14px;
 
-    font-size: 21px;
+    color: #9b6d36;
 
-    margin-bottom: 15px;
+    font-size: 17px;
 }
 
+.food-info button {
+    width: 100%;
 
-/* =========================
-   GENERAL BUTTON
-========================= */
+    padding: 11px 15px;
 
-button {
-    background: linear-gradient(135deg, #8b2635, #a9344b);
-
-    color: white;
-
-    border: none;
-
-    padding: 12px 20px;
-
+    border: 1px solid #3a2a22;
     border-radius: 9px;
 
-    font-size: 15px;
+    background: #3a2a22;
+    color: #fffaf4;
+
+    font-size: 12px;
+    font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.25s;
+    transition: all 0.2s ease;
 }
 
-button:hover {
-    background: linear-gradient(135deg, #a9344b, #c0475d);
-
-    transform: translateY(-1px);
+.food-info button:hover {
+    background: #a47742;
+    border-color: #a47742;
 }
 
 
-/* =========================
-   CART FLOATING BUTTON
-========================= */
+/* ========================================
+   DISH DETAILS MODAL
+======================================== */
 
-.cart-floating-button {
+.dish-modal {
     position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 62px;
-    height: 62px;
-
-    border-radius: 50%;
-
-    background: linear-gradient(135deg, #8b2635, #b43b51);
-
-    color: white;
-
-    border: 2px solid #f5c76a;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.55);
+    inset: 0;
 
     z-index: 1000;
 
-    transition: 0.25s;
-}
-
-.cart-floating-button:hover {
-    transform: scale(1.08);
-}
-
-
-/* =========================
-   CART COUNT
-========================= */
-
-#cartCount {
-    position: absolute;
-
-    top: -5px;
-    right: -5px;
-
-    background: #f5c76a;
-
-    color: #171717;
-
-    width: 24px;
-    height: 24px;
-
-    border-radius: 50%;
-
-    display: flex;
+    display: none;
 
     align-items: center;
     justify-content: center;
 
-    font-size: 12px;
+    padding: 25px;
 
-    font-weight: bold;
+    background: rgba(27, 20, 16, 0.72);
+
+    backdrop-filter: blur(7px);
+}
+
+.dish-modal.active {
+    display: flex;
+}
+
+.dish-modal-content {
+    width: min(920px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    background: #fffdf8;
+
+    border-radius: 22px;
+
+    position: relative;
+
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.3);
+}
+
+.close-dish-modal {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(40, 29, 23, 0.85);
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.detail-image {
+    width: 100%;
+    height: 100%;
+
+    min-height: 600px;
+
+    object-fit: cover;
+}
+
+.dish-detail-info {
+    padding: 42px;
+}
+
+.dish-detail-info h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 38px;
+    line-height: 1.15;
+
+    color: #2b211c;
+}
+
+.detail-price {
+    margin: 12px 0 18px;
+
+    color: #a47740;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+#detailDescription {
+    color: #71645b;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.detail-section {
+    padding: 19px 0;
+
+    border-top: 1px solid #e8ded2;
+}
+
+.detail-section h3 {
+    margin-bottom: 10px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    color: #342720;
+}
+
+.detail-section p {
+    color: #75675d;
+
+    font-size: 13px;
+}
+
+.nutrition-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.nutrition-grid div {
+    padding: 12px 8px;
+
+    text-align: center;
+
+    background: #f5eee5;
+
+    border-radius: 10px;
+}
+
+.nutrition-grid strong {
+    display: block;
+
+    color: #9c6e39;
+
+    font-size: 15px;
+}
+
+.nutrition-grid span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #75675d;
+
+    font-size: 10px;
+}
+
+.detail-add-button {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #34251e;
+
+    color: #fffaf2;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+.detail-add-button:hover {
+    background: #a47740;
 }
 
 
-/* =========================
-   CART PANEL
-========================= */
+/* ========================================
+   CART
+======================================== */
 
 .cart-panel {
     position: fixed;
 
     top: 0;
-    right: -420px;
+    right: -430px;
 
-    width: 400px;
+    width: min(430px, 92vw);
     height: 100vh;
 
-    background: #171717;
-
-    z-index: 2000;
-
-    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
+    z-index: 1200;
 
     display: flex;
-
     flex-direction: column;
 
-    transition: right 0.4s ease;
+    background: #fffdf8;
+
+    box-shadow:
+        -15px 0 45px rgba(31, 22, 17, 0.20);
+
+    transition:
+        right 0.3s ease;
 }
 
-.cart-panel.open {
+.cart-panel.active {
     right: 0;
 }
 
-
-/* =========================
-   CART HEADER
-========================= */
-
 .cart-header {
-    display: flex;
+    padding: 23px;
 
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
-
-    padding: 20px;
-
-    background: linear-gradient(135deg, #090909, #4b1722);
-
-    color: white;
-
-    border-bottom: 2px solid #b8862c;
+    border-bottom: 1px solid #e7ddd0;
 }
 
 .cart-header h2 {
-    color: #f5c76a;
+    font-family: "Playfair Display", serif;
 }
 
 .close-cart {
-    background: #292929;
+    width: 34px;
+    height: 34px;
 
-    color: white;
-
-    width: 35px;
-    height: 35px;
-
-    padding: 0;
-
+    border: none;
     border-radius: 50%;
 
-    font-size: 18px;
+    background: #f0e7dc;
+
+    cursor: pointer;
 }
-
-.close-cart:hover {
-    background: #8b2635;
-}
-
-
-/* =========================
-   CART ITEMS
-========================= */
 
 .cart-items {
     flex: 1;
@@ -444,171 +812,24 @@ button:hover {
 }
 
 .empty-cart {
-    text-align: center;
-
-    color: #888;
-
-    margin-top: 50px;
-}
-
-
-/* =========================
-   CART ITEM
-========================= */
-
-.cart-item {
-    display: grid;
-
-    grid-template-columns: 1fr auto;
-
-    gap: 10px;
-
-    padding: 16px 0;
-
-    border-bottom: 1px solid #332d29;
-}
-
-.cart-item h3 {
-    margin: 0 0 5px;
-
-    font-size: 16px;
-
-    color: #ffffff;
-}
-
-.cart-item p {
-    margin: 0;
-
-    color: #99918a;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   QUANTITY CONTROLS
-========================= */
-
-.quantity-controls {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 9px;
-}
-
-.quantity-controls button {
-    width: 30px;
-    height: 30px;
-
-    padding: 0;
-
-    border-radius: 6px;
-
-    background: #8b2635;
-
-    color: white;
-
-    border: none;
-
-    font-size: 18px;
-
-    cursor: pointer;
-}
-
-.quantity-controls button:hover {
-    background: #b43b51;
-}
-
-.quantity-controls span {
-    min-width: 20px;
+    color: #85776e;
 
     text-align: center;
 
-    font-weight: bold;
-
-    color: #f5f1e8;
+    margin-top: 40px;
 }
 
 
-/* =========================
-   CART ITEM PRICE
-========================= */
-
-.cart-item > strong {
-    color: #f5c76a;
-
-    font-size: 16px;
-
-    align-self: center;
-}
-
-
-/* =========================
-   CUSTOMER DETAILS
-========================= */
-
+/* Customer details hidden */
 .customer-details {
-    padding: 16px 20px;
-
-    border-bottom: 1px solid #332d29;
-
-    background: #1d1d1d;
+    display: none;
 }
 
-.customer-details h3 {
-    margin: 0 0 12px;
-
-    font-size: 18px;
-
-    color: #f5c76a;
-}
-
-.customer-details input {
-    width: 100%;
-
-    box-sizing: border-box;
-
-    padding: 12px;
-
-    margin-bottom: 10px;
-
-    border: 1px solid #403830;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
-    outline: none;
-
-    background: #111111;
-
-    color: white;
-}
-
-.customer-details input::placeholder {
-    color: #777;
-}
-
-.customer-details input:focus {
-    border-color: #c99a3e;
-
-    box-shadow: 0 0 0 3px rgba(201, 154, 62, 0.1);
-}
-
-
-/* =========================
-   CART BOTTOM
-========================= */
 
 .cart-bottom {
     padding: 20px;
 
-    border-top: 1px solid #332d29;
-
-    background: #111111;
+    border-top: 1px solid #e7ddd0;
 }
 
 .total-row {
@@ -616,145 +837,329 @@ button:hover {
 
     justify-content: space-between;
 
-    font-size: 20px;
-
     margin-bottom: 15px;
 
-    color: #ffffff;
+    font-size: 16px;
 }
-
-.total-row strong {
-    color: #f5c76a;
-}
-
-
-/* =========================
-   ORDER BUTTON
-========================= */
 
 .order-button {
     width: 100%;
 
-    padding: 15px;
+    padding: 14px;
 
-    background: linear-gradient(135deg, #8b2635, #b43b51);
+    border: none;
+    border-radius: 10px;
+
+    background: #34251e;
 
     color: white;
 
-    border: none;
-
-    border-radius: 10px;
-
-    font-size: 17px;
-
-    font-weight: bold;
+    font-weight: 700;
 
     cursor: pointer;
+
+    transition:
+        background 0.2s ease;
 }
 
 .order-button:hover {
-    background: linear-gradient(135deg, #a9344b, #c0475d);
-
-    transform: translateY(-1px);
+    background: #a47740;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ========================================
+   CART ITEMS
+======================================== */
 
-footer {
-    background: #080808;
+.cart-item {
+    display: flex;
 
-    color: #d8d0c7;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee4d9;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info strong {
+    display: block;
+
+    color: #342720;
+
+    font-size: 14px;
+}
+
+.cart-item-info p {
+    margin-top: 4px;
+
+    color: #8a7a6e;
+
+    font-size: 12px;
+}
+
+.quantity-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.quantity-controls button {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid #ded1c1;
+
+    border-radius: 50%;
+
+    background: #f7f0e7;
+
+    color: #4a3528;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.quantity-controls span {
+    min-width: 18px;
 
     text-align: center;
 
-    padding: 28px;
+    font-size: 13px;
 
-    margin-top: 35px;
-
-    border-top: 1px solid #33291f;
-}
-
-footer p {
-    opacity: 0.9;
+    font-weight: 600;
 }
 
 
-/* =========================
-   MOBILE DESIGN
-========================= */
+/* ========================================
+   FLOATING CART
+======================================== */
 
-@media (max-width: 600px) {
+.cart-floating-button {
+    position: fixed;
 
-    header {
-        padding: 32px 15px;
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #34251e;
+
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    z-index: 900;
+
+    box-shadow:
+        0 12px 30px rgba(37, 26, 20, 0.25);
+}
+
+#cartCount {
+    position: absolute;
+
+    top: -4px;
+    right: -3px;
+
+    min-width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #b47e3d;
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   NO RESULTS
+======================================== */
+
+.no-results {
+    grid-column: 1 / -1;
+
+    padding: 70px 20px;
+
+    text-align: center;
+}
+
+.no-results h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    color: #3a2a22;
+
+    margin-bottom: 8px;
+}
+
+.no-results p {
+    color: #85776e;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #2a1e18;
+
+    color: #c9b9a7;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .food-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    header h1 {
-        font-size: 29px;
+    .offers {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    header p {
-        font-size: 14px;
+}
+
+
+@media (max-width: 750px) {
+
+    .cafe-header {
+        min-height: 230px;
+
+        padding: 40px 6%;
     }
 
-    main {
-        padding: 22px 15px;
+    .logo-mark {
+        width: 60px;
+        height: 60px;
+
+        font-size: 19px;
     }
 
-    .welcome {
-        padding: 28px 18px;
+    .brand h1 {
+        font-size: 42px;
     }
 
-    .welcome h2 {
-        font-size: 24px;
+    .brand p {
+        font-size: 9px;
+
+        letter-spacing: 3px;
     }
 
-    .menu h2 {
-        font-size: 25px;
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
     }
 
-
-    /* Food card */
-
-    .food-card {
-        display: block;
-    }
-
-    .food-card img {
-        width: 100%;
-        height: 220px;
+    .food-image {
+        height: 190px;
     }
 
     .food-info {
-        padding: 18px;
+        padding: 14px;
     }
 
     .food-info h3 {
-        font-size: 20px;
+        font-size: 17px;
     }
 
+    .dish-modal-content {
+        display: block;
+    }
 
-    /* Cart */
+    .detail-image {
+        height: 300px;
 
-    .cart-panel {
-        width: 100%;
-        right: -100%;
+        min-height: 300px;
+    }
+
+    .dish-detail-info {
+        padding: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .offers {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .offer-card {
+        min-height: 125px;
+
+        padding: 20px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-image {
+        height: 230px;
+    }
+
+    .menu {
+        padding-top: 55px;
+    }
+
+    .dish-detail-info h2 {
+        font-size: 30px;
+    }
+
+    .nutrition-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .cart-floating-button {
         right: 18px;
         bottom: 18px;
-    }
-
-    .cart-item {
-        grid-template-columns: 1fr;
-    }
-
-    .cart-item > strong {
-        align-self: start;
     }
 
 }
