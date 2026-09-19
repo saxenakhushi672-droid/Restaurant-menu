@@ -2,383 +2,448 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Café Lumière</title>
+    <title>HP Cafe | Digital Menu</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================
+         WELCOME SCREEN
+    ========================== -->
 
-    <header class="cafe-header">
+    <section id="welcomeScreen" class="welcome-screen">
 
-        <div class="logo-mark">
-            LM
-        </div>
+        <div class="welcome-content">
 
-        <div class="brand">
+            <div class="welcome-logo">
+                HP
+            </div>
 
-            <h1>Café Lumière</h1>
-
-            <p>COFFEE • FOOD • MOMENTS</p>
-
-        </div>
-
-        <button
-            class="header-cart"
-            onclick="openCart()">
-
-            🛒
-            <span id="headerCartCount">0</span>
-
-        </button>
-
-    </header>
-
-
-    <!-- MAIN -->
-
-    <main>
-
-
-<!-- PREMIUM OFFERS -->
-<section class="offers">
-
-    <div class="offer-card">
-
-        <div class="offer-icon">☕</div>
-
-        <div class="offer-content">
-
-            <span class="offer-label">
-                LUMIÈRE WEEKDAY PRIVILEGE
+            <span class="welcome-label">
+                WELCOME TO
             </span>
 
-            <h3>
-                15% OFF
-            </h3>
+            <h1>HP Cafe</h1>
 
-            <p>
-                On orders above ₹799
+            <p class="welcome-tagline">
+                Eat Good. Feel Good.
             </p>
 
-            <small>
-                Monday – Thursday
-            </small>
+            <p class="welcome-text">
+                Fresh flavours, wholesome choices and the food
+                you love — all in one place.
+            </p>
+
+            <button class="explore-button" onclick="enterMenu()">
+                Explore Menu
+                <span>→</span>
+            </button>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <div class="offer-card">
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
 
-        <div class="offer-icon">✦</div>
-
-        <div class="offer-content">
-
-            <span class="offer-label">
-                COFFEE HOUR
-            </span>
-
-            <h3>
-                Buy 1 • Get 1 at 50% OFF
-            </h3>
-
-            <p>
-                On selected handcrafted coffees
-            </p>
-
-            <small>
-                4 PM – 7 PM
-            </small>
-
-        </div>
-
-    </div>
+    <div id="mainWebsite" class="main-website">
 
 
-    <div class="offer-card">
+        <!-- HEADER -->
 
-        <div class="offer-icon">♡</div>
+        <header class="site-header">
 
-        <div class="offer-content">
+            <a class="brand" href="#" onclick="goHome(); return false;">
 
-            <span class="offer-label">
-                DESSERT & COFFEE
-            </span>
+                <div class="brand-mark">
+                    HP
+                </div>
 
-            <h3>
-                ₹349 Experience
-            </h3>
+                <div class="brand-text">
+                    <h1>HP Cafe</h1>
+                    <p>Eat Good. Feel Good.</p>
+                </div>
 
-            <p>
-                Any dessert + any classic coffee
-            </p>
+            </a>
 
-            <small>
-                Available all day
-            </small>
+            <button class="offers-button" onclick="openOffers()">
+                <span>✦</span>
+                Offers
+            </button>
 
-        </div>
-
-    </div>
+        </header>
 
 
-    <div class="offer-card">
+        <main>
 
-        <div class="offer-icon">◇</div>
+            <!-- =========================
+                 HOME / CATEGORY SCREEN
+            ========================== -->
 
-        <div class="offer-content">
+            <section id="categoryScreen" class="category-screen">
 
-            <span class="offer-label">
-                LUMIÈRE COMBO
-            </span>
+                <div class="category-intro">
 
-            <h3>
-                ₹699
-            </h3>
-
-            <p>
-                Pizza + Pasta + 2 Beverages
-            </p>
-
-            <small>
-                Perfect for sharing
-            </small>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-        <!-- MENU -->
-
-        <section class="menu">
-
-            <div class="menu-heading">
-
-                <div>
-
-                    <span class="section-label">
+                    <span class="eyebrow">
                         OUR MENU
                     </span>
 
                     <h2>
-                        Something for every craving
+                        Find Your Plate.
                     </h2>
 
                     <p>
-                        Freshly prepared favourites, crafted for every mood.
+                        Pick what feels right today.
+                        We'll show you the dishes that fit.
                     </p>
 
                 </div>
 
+
+                <div class="experience-grid">
+
+
+                    <!-- FAT LOSS -->
+
+                    <button
+                        class="experience-card fat-loss-card"
+                        onclick="openCategory('fat-loss')"
+                    >
+
+                        <div class="experience-number">
+                            01
+                        </div>
+
+                        <div class="experience-icon">
+
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M10 27h28c-1.2 8-6.7 12-14 12S11.2 35 10 27Z"/>
+                                <path d="M15 23c2.5-4.5 6-6.8 10.5-7"/>
+                                <path d="M24 24c1-5.5 4.7-9.2 10-11"/>
+                                <path d="M20 19c-1.5-3.5-4-5.7-7.5-6.5"/>
+                                <path d="M17 39h14"/>
+                            </svg>
+
+                        </div>
+
+                        <div class="experience-content">
+
+                            <span class="experience-label">
+                                LIGHT & BALANCED
+                            </span>
+
+                            <h3>
+                                Fat Loss Meals
+                            </h3>
+
+                            <p>
+                                Fresh, balanced and satisfying meals
+                                made for lighter choices.
+                            </p>
+
+                            <span class="experience-link">
+                                Explore 4 dishes →
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- MUSCLE GAIN -->
+
+                    <button
+                        class="experience-card muscle-card"
+                        onclick="openCategory('muscle-gain')"
+                    >
+
+                        <div class="experience-number">
+                            02
+                        </div>
+
+                        <div class="experience-icon">
+
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M8 20v8"/>
+                                <path d="M13 16v16"/>
+                                <path d="M18 19v10"/>
+                                <path d="M30 19v10"/>
+                                <path d="M35 16v16"/>
+                                <path d="M40 20v8"/>
+                                <path d="M18 24h12"/>
+                            </svg>
+
+                        </div>
+
+                        <div class="experience-content">
+
+                            <span class="experience-label">
+                                PROTEIN & POWER
+                            </span>
+
+                            <h3>
+                                Muscle Gain Meals
+                            </h3>
+
+                            <p>
+                                Protein-focused, wholesome meals
+                                built to keep you fuelled.
+                            </p>
+
+                            <span class="experience-link">
+                                Explore 4 dishes →
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- CRAVE -->
+
+                    <button
+                        class="experience-card crave-card"
+                        onclick="openCategory('crave')"
+                    >
+
+                        <div class="experience-number">
+                            03
+                        </div>
+
+                        <div class="experience-icon">
+
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M12 37 23 10c8 3 13 9 15 17L12 37Z"/>
+                                <path d="M17 29h18"/>
+                                <circle cx="24" cy="21" r="1.8"/>
+                                <circle cx="30" cy="26" r="1.8"/>
+                            </svg>
+
+                        </div>
+
+                        <div class="experience-content">
+
+                            <span class="experience-label">
+                                YOUR FAVOURITES
+                            </span>
+
+                            <h3>
+                                Crave & Indulge
+                            </h3>
+
+                            <p>
+                                Comfort favourites for the moments
+                                when cravings call.
+                            </p>
+
+                            <span class="experience-link">
+                                Explore 4 dishes →
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+
+                <!-- SMALL OFFERS LINK -->
+
+                <button class="home-offer-link" onclick="openOffers()">
+
+                    <span>✦</span>
+
+                    <div>
+                        <strong>Something extra?</strong>
+                        <small>Take a look at today's offers</small>
+                    </div>
+
+                    <span class="offer-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </section>
+
+
+            <!-- =========================
+                 DISH SCREEN
+            ========================== -->
+
+            <section id="dishScreen" class="dish-screen">
+
+                <button class="back-button" onclick="goHome()">
+                    ← Explore Another Plate
+                </button>
+
+
+                <div class="dish-heading">
+
+                    <div>
+
+                        <span
+                            id="categoryLabel"
+                            class="eyebrow"
+                        >
+                            MENU
+                        </span>
+
+                        <h2 id="categoryTitle">
+                            Fat Loss Meals
+                        </h2>
+
+                        <p id="categoryDescription">
+                            Fresh, balanced and satisfying.
+                        </p>
+
+                    </div>
+
+                    <span class="dish-count">
+                        4 DISHES
+                    </span>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="category-search">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search dishes..."
+                        oninput="searchCurrentCategory()"
+                    >
+
+                </div>
+
+
+                <!-- DISHES -->
+
+                <div
+                    id="foodGrid"
+                    class="food-grid"
+                >
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            <div class="footer-brand">
+                HP Cafe
             </div>
 
+            <p>
+                Every Bite Healthy Bite
+            </p>
+
+            <small>
+                © 2026 HP Cafe
+            </small>
+
+        </footer>
+
+    </div>
 
 
-            <!-- SEARCH -->
+    <!-- =========================
+         DISH DETAILS
+    ========================== -->
 
-            <div class="search-box">
+    <div
+        id="dishModal"
+        class="dish-modal"
+        onclick="closeDishFromBackground(event)"
+    >
 
-                <span>
-                    🔍
-                </span>
+        <div class="dish-modal-content">
 
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search dishes..."
+            <button
+                class="close-modal"
+                onclick="closeDishDetails()"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-image-wrap">
+
+                <img
+                    id="detailImage"
+                    src=""
+                    alt="Dish"
                 >
 
             </div>
 
 
-
-            <!-- CATEGORIES -->
-
-            <div class="categories">
-
-                <button
-                    class="category-btn active"
-                    onclick="filterMenu('all', this)">
-                    All
-                </button>
-
-                <button
-                    class="category-btn"
-                    onclick="filterMenu('starter', this)">
-                    Snacks
-                </button>
-
-                <button
-                    class="category-btn"
-                    onclick="filterMenu('pizza', this)">
-                    Pizza & Pasta
-                </button>
-
-                <button
-                    class="category-btn"
-                    onclick="filterMenu('burger', this)">
-                    Burgers & Sandwiches
-                </button>
-
-                <button
-                    class="category-btn"
-                    onclick="filterMenu('chinese', this)">
-                    Chinese
-                </button>
-
-                <button
-                    class="category-btn"
-                    onclick="filterMenu('indian', this)">
-                    Indian
-                </button>
-
-                <button
-                    class="category-btn"
-                    onclick="filterMenu('drinks', this)">
-                    Beverages
-                </button>
-
-                <button
-                    class="category-btn"
-                    onclick="filterMenu('dessert', this)">
-                    Desserts
-                </button>
-
-            </div>
-
-
-
-            <!-- FOOD GRID -->
-
-            <div
-                id="foodGrid"
-                class="food-grid">
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- DISH DETAILS MODAL -->
-
-    <div
-        id="dishModal"
-        class="dish-modal">
-
-        <div class="dish-modal-content">
-
-            <button
-                class="close-dish-modal"
-                onclick="closeDishDetails()">
-                ✕
-            </button>
-
-
-            <img
-                id="detailImage"
-                class="detail-image"
-                src=""
-                alt="Dish"
-            >
-
-
-            <div class="dish-detail-info">
+            <div class="modal-info">
 
                 <span
                     id="detailCategory"
-                    class="detail-category">
-                </span>
+                    class="modal-category"
+                ></span>
 
                 <h2 id="detailName"></h2>
 
                 <div
                     id="detailPrice"
-                    class="detail-price">
-                </div>
+                    class="modal-price"
+                ></div>
 
                 <p
                     id="detailDescription"
-                    class="detail-description">
-                </p>
-
+                    class="modal-description"
+                ></p>
 
 
                 <!-- NUTRITION -->
 
-                <div class="detail-section">
+                <div class="nutrition-block">
 
-                    <h3>
-                        Nutrition
-                    </h3>
+                    <div class="detail-title">
+                        Nutrition at a glance
+                    </div>
 
                     <div class="nutrition-grid">
 
                         <div>
-
-                            <strong
-                                id="detailCalories">
-                            </strong>
-
-                            <span>
-                                Calories
-                            </span>
-
+                            <strong id="detailCalories"></strong>
+                            <span>Calories</span>
                         </div>
 
-
                         <div>
-
-                            <strong
-                                id="detailProtein">
-                            </strong>
-
-                            <span>
-                                Protein
-                            </span>
-
+                            <strong id="detailProtein"></strong>
+                            <span>Protein</span>
                         </div>
 
-
                         <div>
-
-                            <strong
-                                id="detailCarbs">
-                            </strong>
-
-                            <span>
-                                Carbs
-                            </span>
-
+                            <strong id="detailCarbs"></strong>
+                            <span>Carbs</span>
                         </div>
 
-
                         <div>
-
-                            <strong
-                                id="detailFat">
-                            </strong>
-
-                            <span>
-                                Fat
-                            </span>
-
+                            <strong id="detailFat"></strong>
+                            <span>Fat</span>
                         </div>
 
                     </div>
@@ -386,56 +451,38 @@
                 </div>
 
 
+                <div class="detail-row">
 
-                <!-- INGREDIENTS -->
-
-                <div class="detail-section">
-
-                    <h3>
-                        Ingredients
-                    </h3>
+                    <span>Ingredients</span>
 
                     <p id="detailIngredients"></p>
 
                 </div>
 
 
+                <div class="detail-row">
 
-                <!-- PREPARATION -->
-
-                <div class="detail-section">
-
-                    <h3>
-                        How It's Made
-                    </h3>
+                    <span>How it's made</span>
 
                     <p id="detailPreparation"></p>
 
                 </div>
 
 
+                <div class="detail-row">
 
-                <!-- ALLERGENS -->
-
-                <div class="detail-section">
-
-                    <h3>
-                        Allergens
-                    </h3>
+                    <span>Allergens</span>
 
                     <p id="detailAllergens"></p>
 
                 </div>
 
 
-
-                <button
-                    id="detailAddButton"
-                    class="detail-add-button">
-
-                    Add to Cart
-
-                </button>
+                <p class="nutrition-note">
+                    Nutritional values are approximate.
+                    Please check with the café team for dietary
+                    or allergen-related requirements.
+                </p>
 
             </div>
 
@@ -444,157 +491,107 @@
     </div>
 
 
-
-    <!-- CART OVERLAY -->
+    <!-- =========================
+         OFFERS PANEL
+    ========================== -->
 
     <div
-        id="cartOverlay"
-        class="cart-overlay"
-        onclick="closeCart()">
-    </div>
+        id="offersOverlay"
+        class="offers-overlay"
+        onclick="closeOffers()"
+    ></div>
 
-
-
-    <!-- CART PANEL -->
 
     <aside
-        id="cartPanel"
-        class="cart-panel">
+        id="offersPanel"
+        class="offers-panel"
+    >
 
-        <div class="cart-header">
+        <div class="offers-panel-header">
 
             <div>
 
-                <span class="section-label">
-                    YOUR ORDER
+                <span class="eyebrow">
+                    A LITTLE EXTRA
                 </span>
 
                 <h2>
-                    Your Cart
+                    Today's Offers
                 </h2>
 
             </div>
 
-            <button
-                class="close-cart"
-                onclick="closeCart()">
-                ✕
+            <button onclick="closeOffers()">
+                ×
             </button>
 
         </div>
 
 
-
-        <div
-            id="cartItems"
-            class="cart-items">
-
-            <p class="empty-cart">
-                Your cart is empty.
-            </p>
-
-        </div>
+        <div class="offers-list">
 
 
+            <div class="mini-offer">
 
-        <!-- CUSTOMER DETAILS -->
-
-        <div class="customer-details">
-
-            <h3>
-                Customer Details
-            </h3>
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Your Name"
-            >
-
-            <input
-                type="text"
-                id="tableNumber"
-                placeholder="Table Number"
-            >
-
-            <input
-                type="tel"
-                id="phoneNumber"
-                placeholder="Phone Number"
-            >
-
-        </div>
-
-
-
-        <!-- TOTAL -->
-
-        <div class="cart-bottom">
-
-            <div class="total-row">
-
-                <span>
-                    Total
+                <span class="offer-icon">
+                    ✦
                 </span>
 
-                <strong>
-                    ₹<span id="cartTotal">0</span>
-                </strong>
+                <div>
+                    <small>WEEKDAY SPECIAL</small>
+                    <h3>15% Off</h3>
+                    <p>
+                        On selected meals above ₹799
+                    </p>
+                </div>
 
             </div>
 
 
-            <button
-                class="order-button"
-                onclick="callAttendant()">
-                Call Attendant 
+            <div class="mini-offer">
 
-            </button>
+                <span class="offer-icon">
+                    ☕
+                </span>
+
+                <div>
+                    <small>CAFE HOUR</small>
+                    <h3>Buy 1, Get 1 at 50% Off</h3>
+                    <p>
+                        On selected beverages
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="mini-offer">
+
+                <span class="offer-icon">
+                    ◇
+                </span>
+
+                <div>
+                    <small>HP COMBO</small>
+                    <h3>Meal + Beverage</h3>
+                    <p>
+                        Ask our café team for today's combo.
+                    </p>
+                </div>
+
+            </div>
 
         </div>
+
+
+        <p class="offer-note">
+            Offers shown are demo content.
+            Replace them with HP Cafe's current offers
+            before final publishing.
+        </p>
 
     </aside>
 
-
-
-    <!-- FLOATING CART -->
-
-    <button
-        id="cartButton"
-        class="cart-floating-button"
-        onclick="openCart()">
-
-        🛒
-
-        <span id="cartCount">
-            0
-        </span>
-
-    </button>
-
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-logo">
-            Café Lumière
-        </div>
-
-        <p>
-            COFFEE • FOOD • MOMENTS
-        </p>
-
-        <small>
-            © 2026 Café Lumière
-        </small>
-
-    </footer>
-
-
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
